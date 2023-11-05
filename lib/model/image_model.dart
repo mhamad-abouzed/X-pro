@@ -32,13 +32,13 @@ class ImageModel {
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-  
+
     result.addAll({'albumId': albumId});
     result.addAll({'id': id});
     result.addAll({'title': title});
     result.addAll({'url': url});
     result.addAll({'thumbnailUrl': thumbnailUrl});
-  
+
     return result;
   }
 
@@ -54,7 +54,8 @@ class ImageModel {
 
   String toJson() => json.encode(toMap());
 
-  factory ImageModel.fromJson(String source) => ImageModel.fromMap(json.decode(source));
+  factory ImageModel.fromJson(String source) =>
+      ImageModel.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -64,21 +65,21 @@ class ImageModel {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is ImageModel &&
-      other.albumId == albumId &&
-      other.id == id &&
-      other.title == title &&
-      other.url == url &&
-      other.thumbnailUrl == thumbnailUrl;
+        other.albumId == albumId &&
+        other.id == id &&
+        other.title == title &&
+        other.url == url &&
+        other.thumbnailUrl == thumbnailUrl;
   }
 
   @override
   int get hashCode {
     return albumId.hashCode ^
-      id.hashCode ^
-      title.hashCode ^
-      url.hashCode ^
-      thumbnailUrl.hashCode;
+        id.hashCode ^
+        title.hashCode ^
+        url.hashCode ^
+        thumbnailUrl.hashCode;
   }
 }
